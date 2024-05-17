@@ -272,3 +272,6 @@ C:\Users\My PC\source\repos\BookMyMeal\obj\Debug\net6.0\refint\BookMyMeal.dll
 C:\Users\My PC\source\repos\BookMyMeal\obj\Debug\net6.0\BookMyMeal.pdb
 C:\Users\My PC\source\repos\BookMyMeal\obj\Debug\net6.0\BookMyMeal.genruntimeconfig.cache
 C:\Users\My PC\source\repos\BookMyMeal\obj\Debug\net6.0\ref\BookMyMeal.dll
+C:\Users\My PC\source\repos\BookMyMeal\obj\Debug\net6.0\BookMyMeal.sourcelink.json
+C:\Users\My PC\source\repos\BookMyMeal\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\My PC\source\repos\BookMyMeal\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll

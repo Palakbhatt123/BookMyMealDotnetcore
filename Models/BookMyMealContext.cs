@@ -17,6 +17,7 @@ namespace BookMyMeal.Models
         }
 
         public virtual DbSet<Employee> Employees { get; set; } = null!;
+        public virtual DbSet<Meal> Meals { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -58,6 +59,38 @@ namespace BookMyMeal.Models
                     .HasMaxLength(255)
                     .IsUnicode(false)
                     .HasColumnName("username");
+            });
+
+            modelBuilder.Entity<Meal>(entity =>
+            {
+                entity.ToTable("meal");
+
+                entity.HasIndex(e => e.MealId, "IX_meal");
+
+                entity.Property(e => e.MealId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("meal_id");
+
+                entity.Property(e => e.Description)
+                    .HasColumnType("text")
+                    .HasColumnName("description");
+
+                entity.Property(e => e.MealDay)
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("meal_day");
+
+                entity.Property(e => e.MealName)
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("meal_name");
+
+                entity.Property(e => e.MealPrice).HasColumnName("meal_price");
+
+                entity.Property(e => e.MealType)
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("meal_type");
             });
 
             OnModelCreatingPartial(modelBuilder);

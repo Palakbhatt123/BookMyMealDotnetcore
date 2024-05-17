@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookMyMeal.Migrations
 {
     [DbContext(typeof(BookMyMealContext))]
-    [Migration("20240508085658_initial")]
-    partial class initial
+    [Migration("20240516194003_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -61,6 +61,49 @@ namespace BookMyMeal.Migrations
                         .HasFilter("[username] IS NOT NULL");
 
                     b.ToTable("employee", (string)null);
+                });
+
+            modelBuilder.Entity("BookMyMeal.Models.Meal", b =>
+                {
+                    b.Property<int>("MealId")
+                        .HasColumnType("int")
+                        .HasColumnName("meal_id");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("description");
+
+                    b.Property<string>("MealDay")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("meal_day");
+
+                    b.Property<string>("MealName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("meal_name");
+
+                    b.Property<int?>("MealPrice")
+                        .HasColumnType("int")
+                        .HasColumnName("meal_price");
+
+                    b.Property<string>("MealType")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("meal_type");
+
+                    b.HasKey("MealId");
+
+                    b.HasIndex(new[] { "MealId" }, "IX_meal");
+
+                    b.ToTable("meal", (string)null);
                 });
 #pragma warning restore 612, 618
         }

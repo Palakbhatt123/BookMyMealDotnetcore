@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
 using BookMyMeal.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookMyMeal.Controllers
 {
@@ -12,20 +12,6 @@ namespace BookMyMeal.Controllers
         {
             _dbcontext=_context;
 
-        }
-
-        [HttpGet]
-        [Route("emp")]
-        public async Task<IActionResult> getEmps()
-        {
-            try {
-                List<Employee> listEmp = _dbcontext.Employees.ToList();
-                return Ok(listEmp);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
         }
     }
 }
